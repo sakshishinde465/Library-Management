@@ -1,0 +1,14 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h1>Notifications</h1>
+    {% if notifications %}
+        <ul>
+            {% for notification in notifications %}
+                <li>{{ notification.message }}</li>
+                <small>{{ notification.date }}</small>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No notifications to display.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "navbar.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/home.css">
+<div class="card-panel" >
+<div>
+    <h4 >New to The Library?</h4>
+    <p>Register an account below!</p>
+
+</div>
+
+<div>
+<form method="POST">
+    <div>
+        <div class="row">
+            <input id="username" name="username" type="text"  required>
+            <label for="username">Username</label>
+        </div>
+        <div class="row">
+            <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one digit.">
+            <label for="password">Password</label>
+        </div>
+        <div class = "row">
+            <input type="email" name="email">
+            <label for="email">Email</label>
+        </div>
+        <div class="row">
+            <button type="submit" class = "submit_register">
+                Register
+            </button>
+        </div>
+    </div>
+</form>
+</div>
+<!-- Login Link -->
+    <div class="linkl">
+        <p class="center-align account">
+            Already have an account?
+            <a href="{{ url_for('login') }}" class="white-text">Login</a>
+        </p>
+    </div>
+
+{% endblock %}

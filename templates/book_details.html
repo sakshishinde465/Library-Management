@@ -1,0 +1,84 @@
+{% extends "navbar.html" %}
+{% block content %}
+  <head>
+    <title>Book Details</title>
+    <style>
+      .book-details {
+        margin-top: 50px;
+        margin-left: 60px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book-details">
+      {% if book %}
+        <h2>{{ book.title }}</h2>
+        <table>
+          <tr>
+            <th>Author</th>
+            <td>{{ book.author }}</td>
+          </tr>
+          <tr>
+            <th>Genre</th>
+            <td>{{ book.genre }}</td>
+          </tr>
+          <tr>
+            <th>Publisher</th>
+            <td>{{ book.publisher }}</td>
+          </tr>
+          <tr>
+            <th>Release Date</th>
+            <td>{{ book.release_date }}</td>
+          </tr>
+          <tr>
+            <th>ISBN</th>
+            <td>{{ book.isbn }}</td>
+          </tr>
+          <tr>
+            <th>Synopsis</th>
+            <td>{{ book.synopsis }}</td>
+          </tr>
+          <tr>
+            <th>Availability</th>
+            <td>{{ book.avail_status }}</td>
+          </tr>
+          <tr>
+            <th>Quantity</th>
+            <td>{{ book.quantity }}</td>
+          </tr>
+        </table>
+        <br>
+        {% if session['username'] != 'admin' %}
+        <td>
+          <form method="POST" action = "{{ url_for('borrow') }}">
+              <input type="submit" value="Borrow" name = "borrow">
+              <input type="text" value="{{book._id}}" style="display: none;" name = "id">
+              <input type="text" value="{{book.title}}" style="display: none;" name = "title">
+          </form>
+      </td>
+      {% if book.quantity <= 0 %}
+      <td>
+          <form method="POST" action= "{{ url_for('reserve') }}">
+              <input type="text" value="{{book._id}}" style="display: none;" name = "id">
+              <input type="text" value="{{book.title}}" style="display: none;" name = "title">
+              <input type="submit" value="Reserve" name = "reserve">
+          </form>
+      </td>
+      {% endif %}
+      {% endif %}
+      {% else %}
+        <p>No book found with that ID.</p>
+      {% endif %}
+    </div>
+  </body>
+{% endblock %}

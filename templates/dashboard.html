@@ -1,0 +1,22 @@
+{% extends "navbar.html" %}
+{% block content %}
+<!doctype html>
+<html>
+  <head>
+    <title>Library Dashboard</title>
+    <link rel="stylesheet" href="/static/home.css">
+  </head>
+  <body>
+    <div class="card-panel">
+    <h1>Library Dashboard</h1>
+    <p>Number of books available: {{ num_books_available }}</p>
+    <p>Number of users: {{ num_users }}</p>
+    <p>Total books quantity : {{total_quantity_available}}</p>
+    <p>Total Overdue Books : {{c}}</p>
+    <form action="{{url_for('manage_users')}}">
+      <input type="submit" value = "manage users??">
+    </form>
+  </div>
+  </body>
+</html>
+{% endblock %}

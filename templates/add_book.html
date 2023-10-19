@@ -1,0 +1,85 @@
+<!-- to add books into the database -->
+{% extends "navbar.html" %}
+{% block content %}
+
+<style>
+  label{
+    background-color: aliceblue;
+    color: rgba(109, 62, 14, 0.82);
+    border-radius:8px;
+  }
+    </style>
+    <div class="card-panel">
+<form method="POST" class="container pt-5">
+    <div class="form-group row">
+      <label for="title" class="col-sm-2 col-form-label">Book Title:</label>
+      <div class="col-sm-10">
+        <input type="text" id="title" name="title" class="form-control" minlength="2" maxlength="50" required>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="author" class="col-sm-2 col-form-label">Author:</label>
+      <div class="col-sm-10">
+        <input type="text" id="author" name="author" class="form-control" minlength="3" maxlength="50" required>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="genre" class="col-sm-2 col-form-label">Genre:</label>
+      <div class="col-sm-10">
+        <input type="text" id="genre" name="genre" class="form-control" minlength="5" maxlength="50" required>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="publisher" class="col-sm-2 col-form-label">Publisher:</label>
+      <div class="col-sm-10">
+        <input type="text" id="publisher" name="publisher" class="form-control" minlength="3" maxlength="15" required>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="release_date" class="col-sm-2 col-form-label">Publication Date:</label>
+      <div class="col-sm-10">
+        <input type="date" id="release_date" name="release_date" class="form-control datepicker" required>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="isbn" class="col-sm-2 col-form-label">ISBN-13:</label>
+      <div class="col-sm-10">
+        <input type="number" id="isbn" name="isbn" class="form-control" min="0" minlength="13" maxlength="13">
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="synopsis" class="col-sm-2 col-form-label">Synopsis:</label>
+      <div class="col-sm-10">
+        <input type="text" id="synopsis" name="synopsis" class="form-control" minlength="3" maxlength="600">
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="avail_status" class="col-sm-2 col-form-label">Availability Status:</label>
+      <div class="col-sm-10">
+        <input type="text" id="avail_status" name="avail_status" class="form-control">
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label for="quantity" class="col-sm-2 col-form-label">Quantity:</label>
+      <div class="col-sm-10">
+        <input type="text" id="quantity" name="quantity" class="form-control">
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <div class="col-sm-12 center-align submitbutton">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+ 
+{% endblock %}

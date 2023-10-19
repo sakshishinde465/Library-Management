@@ -1,0 +1,40 @@
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid #211717;
+    background-color: #0a0101;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  
+  li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+  
+  li a.active {
+    color: white;
+    background-color:rgba(109, 62, 14, 0.82);
+  } 
+  .logout{
+    float: right;
+  }
+  .search{
+    float: right;
+    padding: 6px 8px ;
+    margin-top: 3px;
+  }
+  

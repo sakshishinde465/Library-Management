@@ -1,0 +1,94 @@
+{% extends 'navbar.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<head>
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  
+
+
+  <div class="container">
+    <h1 class="my-4">Welcome {{ user.username }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <form action="{{url_for('manage_profile')}}" method="POST">
+      <button class="btn btn-primary" type="submit" data-toggle="collapse" data-target="#manage-profile">
+        Manage Profile
+      </button>
+    </form>
+    
+  
+    <h3>Borrow History</h3>
+    {% if user.loans %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Loan Date</th>
+            <th>Due Date</th>
+            <th>Returned</th>
+            <th>Returned Date</th>
+            <th>Fine Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for loan in user.loans %}
+            <tr>
+              <td>{{ loan.title }}</td>
+              <td>{{ loan.loan_date }}</td>
+              <td>{{ loan.due_date }}</td>
+              <td>{% if loan.returned %}Yes{% else %}No{% endif %}</td>
+              <td>{{ loan.returned_date }}</td>
+              <td>{{ loan.fine_amount }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No loans to display.</p>
+    {% endif %}
+    <h3>Reserved Books</h3>
+    {% if user.reserved_books %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Reservation Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserved_book in user.reserved_books %}
+            <tr>
+              <td>{{ reserved_book.title }}</td>
+              <td>{{ reserved_book.reserved_date }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No reserved books to display.</p>
+    {% endif %}
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+  
+  <!-- Script to toggle the manage-profile section -->
+  <script>
+    $(document).ready(function () {
+      // collapse and expand the manage-profile area when the button is clicked
+      $('#manage-profile').on('show.bs.collapse', function () {
+        $('button[data-target="#manage-profile"]').html('Hide Profile');
+      });
+      $('#manage-profile').on('hide.bs.collapse', function () {
+        $('button[data-target="#manage-profile"]').html('Manage Profile');
+      });
+    });
+  </script>
+  </body>
+{% endblock %}
+
+
+

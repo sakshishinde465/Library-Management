@@ -1,0 +1,40 @@
+{% extends "navbar.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="/static/login.css">
+<div  class="card-panel">
+<center><strong class = "logl">Login into your Account</strong></center>
+    <div >
+        <form  method="POST">
+            <div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type = "name" name="username">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <input type = "password" name = "password">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- Login Button -->
+                <div class="row">
+                    <button type="submit" class = "login_button">
+                        Log In 
+                    </button>
+                </div>
+            </div>
+        </form> 
+        <div class="linkl">
+            <p class="center-align account">
+                Don't have an account yet?
+            <a href="{{ url_for('home') }}" class="white-text">Register Account</a>
+            </p>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "navbar.html" %}
+{% block content %}
+<!doctype html>
+<html>
+  <head>
+    <title>Library Dashboard</title>
+    <style>
+        table{                
+            border-collapse: collapse;
+            background-color: aliceblue;
+            padding: 10px;
+        }
+        th {background-color: rgb(232, 226, 226);}
+        th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        .tab{
+          margin-top: 50px;
+          margin-left: 60px;
+        }
+    </style>
+</head>
+<div class="tab">
+  <table>
+    <tr>
+      <th>Book Title</th>
+      <th>Name of the author</th>
+      <th>Genre</th>
+      <th>Publisher</th>
+      <th>Date of Publishment</th>
+      <th>Isbn</th>
+      <th>Synopsis</th>
+      <th>Available?</th>
+      <th>quantity</th>
+      {% if session['username'] == 'admin' %}
+      <th>Delete</th>
+      {% endif %}
+    </tr>
+    {% for book in books %}
+    <tr>
+      <td>
+        <a href="{{ url_for('book_details', book_id=book._id) }}">{{ book.title }}</a>
+      </td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.genre }}</td>
+      <td>{{ book.publisher }}</td>
+      <td>{{ book.release_date }}</td>
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.synopsis }}</td>
+      <td>{{ book.avail_status }}</td>
+      <td>{{ book.quantity }}</td>
+      {% if session['username'] == 'admin' %}
+      <td>
+        <form method="POST" action = "/del_books">
+            <input type="hidden" name="delv" value="{{ book._id }}">
+            <button type="submit" name="confirm_delete" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
+          </form>
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

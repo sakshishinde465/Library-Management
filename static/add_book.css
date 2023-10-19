@@ -1,0 +1,53 @@
+/* Styling for add book form */
+
+div {
+    margin: 50px auto;
+    width: 80%;
+  }
+  
+  form {
+    max-width: 650px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  label {
+    font-size: 18px;
+    color: #8B4513;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    background-color: #8B4513;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .submitbutton {
+    margin-top: 30px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    div {
+      width: 90%;
+    }
+  }

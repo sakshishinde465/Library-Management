@@ -1,0 +1,88 @@
+/* Styling for registration form */
+
+div {
+    margin-top: 5px;
+  }
+
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+.card-panel {
+max-width: 400px;
+margin-left: 370px;
+background-color: #fff;
+border-radius: 5px;
+padding: 30px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+  
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  label {
+    margin-top: auto;
+    padding-top: 0%;
+    font-size: 18px;
+    color:rgba(109, 62, 14, 0.82);
+  }
+  
+  input[name = "username"],
+  input[type="password"],
+  input[type="email"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .submit_register {
+    background-color: rgba(109, 62, 14, 0.82);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  a {
+    color: rgba(109, 62, 14, 0.82);
+    text-decoration: underline;
+  }
+
+  .registrationline {
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+  }
+  
+  .account {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  
+  .center-align {
+    text-align: center;
+  }
+
+  .linkl{
+    padding-top: 0px;
+  }
+ 

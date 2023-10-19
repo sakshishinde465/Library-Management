@@ -1,0 +1,38 @@
+{% extends "navbar.html" %}
+{% block content %}
+<div  id="manage-profile">
+    <div class="card card-body">
+      <form action="{{ url_for('update_username') }}" method="post">
+        <h3>Change Username</h3>
+        <div class="form-group">
+          <label for="new-username">New Username:</label>
+          <input type="text" class="form-control" id="new-username" name="new_username" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Username</button>
+      </form>
+      <form action="{{ url_for('update_password') }}" method="post">
+        <h3>Change Password</h3>
+        <div class="form-group">
+          <label for="current-password">Current Password:</label>
+          <input type="password" class="form-control" id="current-password" name="current_password" required>
+        </div>
+        <div class="form-group">
+          <label for="new-password">New Password:</label>
+          <input type="password" class="form-control" id="new-password" name="new_password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" class="form-control" id="confirm-password" name="confirm_password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Password</button>
+      </form>
+      <form action="{{ url_for('delete_account') }}" method="post">
+        <h3>Delete Account</h3>
+        <div class="form-group">
+          <label for="confirm-delete">Are you sure you want to delete your account? This action cannot be undone.</label>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete Account</button>
+      </form>
+    </div>
+  </div>
+  {% endblock %}
