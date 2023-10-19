@@ -1,34 +1,9 @@
-
 README
 
 Introduction
 
 This is a Python and MongoDB-based library management system. It allows users to borrow and reserve books, and librarians to manage books, fines, and users. The system also features a dashboard for librarians to view available and borrowed books, and to manage users and books.
 
-Dependencies
-
-The following Python packages are required to run this system:
-
-APScheduler==3.10.4
-blinker==1.6.3
-cachelib==0.10.2
-click==8.1.7
-colorama==0.4.6
-DateTime==5.2
-dnspython==2.4.2
-Flask==3.0.0
-Flask-Session==0.5.0
-itsdangerous==2.1.2
-Jinja2==3.1.2
-MarkupSafe==2.1.3
-pymongo==4.5.0
-pytz==2023.3.post1
-setuptools==68.2.2
-six==1.16.0
-tzdata==2023.3
-tzlocal==5.1
-Werkzeug==3.0.0
-zope.interface==6.1
 Installation
 
 To install the required dependencies, run the following command in your terminal:
